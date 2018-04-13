@@ -86,11 +86,11 @@ class FloatLabelTextField extends Component {
     }
   }
 
-  leftPadding() {
+  leftPadding = () => {
     return { width: this.props.leftPadding || 0 }
   }
 
-  withBorder() {
+  withBorder = () => {
     if (!this.props.noBorder) {
       return styles.withBorder;
     }
@@ -124,27 +124,27 @@ class FloatLabelTextField extends Component {
     );
   }
 
-  inputRef() {
+  inputRef = () => {
     return this.refs.input;
   }
 
-  focus() {
+  focus = () => {
     this.inputRef().focus();
   }
 
-  blur() {
+  blur = () => {
     this.inputRef().blur();
   }
 
-  isFocused() {
+  isFocused = () => {
     return this.inputRef().isFocused();
   }
 
-  clear() {
+  clear = () => {
     this.inputRef().clear();
   }
 
-  setFocus() {
+  setFocus = () => {
     this.setState({
       focused: true
     });
@@ -153,7 +153,7 @@ class FloatLabelTextField extends Component {
     } catch (_error) { }
   }
 
-  unsetFocus() {
+  unsetFocus = () => {
     this.setState({
       focused: false
     });
@@ -162,19 +162,19 @@ class FloatLabelTextField extends Component {
     } catch (_error) { }
   }
 
-  labelStyle() {
+  labelStyle = () => {
     if (this.state.focused) {
       return styles.focused;
     }
   }
 
-  placeholderValue() {
+  placeholderValue = () => {
     if (this.state.text) {
       return this.props.placeholder;
     }
   }
 
-  setText(value) {
+  setText = (value) => {
     this.setState({
       text: value
     });
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: 45,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     justifyContent: 'center'
   },
   viewContainer: {
