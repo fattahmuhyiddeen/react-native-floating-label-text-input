@@ -98,13 +98,14 @@ class FloatLabelTextField extends Component {
 
   render() {
     const inputStyle = (this.props.inputStyle) ? this.props.inputStyle : null;
+    const placeholderFocusStyle = (this.props.placeholderFocusStyle) ? this.props.placeholderFocusStyle : null;
     return (
       <View style={styles.container}>
         <View style={styles.viewContainer}>
           <View style={[styles.paddingView, this.leftPadding()]} />
           <View style={[styles.fieldContainer, this.withBorder()]}>
             <FloatingLabel visible={this.state.text}>
-              <Text style={[styles.fieldLabel, this.labelStyle()]}>{this.placeholderValue()}</Text>
+              <Text style={[styles.fieldLabel, this.labelStyle(),placeholderFocusStyle]}>{this.placeholderValue()}</Text>
             </FloatingLabel>
             <TextFieldHolder withValue={this.state.text}>
               <TextInput {...this.props}
